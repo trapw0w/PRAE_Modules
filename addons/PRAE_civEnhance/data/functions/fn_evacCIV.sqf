@@ -28,7 +28,7 @@ if (_target getVariable["EVAC_IN_USE", false]) exitWith {hint "Evacuation Curren
 _target setVariable["EVAC_IN_USE", true, true];
 
 // Play evac sound file
-playSound3D ["\PRAE_civEnhance\data\audio\civ_evac_1.ogg", _x];
+playSound3D ["\PRAE_civEnhance\data\audio\civ_evac_1.ogg", _target];
 
 // Find all Agents(Civs) within a 200 metre radius from the calling vehicle
 /*_agentObjects = [];
