@@ -2,18 +2,20 @@
 Function: PRAE_fnc_evacCIV
 
 Description:
+	Code executed once player selects "PRAE Evac Civilians" on a BLUFOR vehicle. Will play a random audio file from _sounds
+	array and disable the use of the action for 20 seconds.
 
 Parameters:
+	_target - This is the item that the addAction has been executed on. This will be a vehicle.
 
 Returns:
+	N/A
 
 Examples:
-    (begin example)
-
-    (end)
+    N/A
 
 Author:
-
+	trapw0w
 ---------------------------------------------------------------------------- */
 
 params ["_target"];

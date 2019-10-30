@@ -1,4 +1,10 @@
+/*
+Description:
+    CBA preInit handler, being used to add Addon Options to the game
 
+Author:
+    trapw0w
+*/
 [
     "PRAE_civEnhance", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type

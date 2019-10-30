@@ -2,16 +2,17 @@
 Function: PRAE_fnc_addEvacCIV
 
 Description:
+	Function add ACE interaction to all BLUFOR vehicles that are not air assets
 
 Parameters:
+	N/A
 
 Returns:
+	N/A
 
 Examples:
-    (begin example)
-
-    (end)
-
+    BLUFOR Humvee will have an ACE interaction added to it with the option of "PRAE Evacuate Civilians"
+		
 Author: trapw0w
 
 ---------------------------------------------------------------------------- */
@@ -19,7 +20,7 @@ Author: trapw0w
 diag_log "[PRAE Evactuate Civilians] - Initialising";
 
 // Create Action to Evactuate Civilians
-_evacCIV = ["EVAC_CIV","Evacuate Civilians","",{
+_evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
 	[_target] spawn PRAE_fnc_evacCIV;
 },{true}] call ace_interact_menu_fnc_createAction;
