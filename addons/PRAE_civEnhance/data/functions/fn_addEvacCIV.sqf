@@ -22,7 +22,7 @@ diag_log "[PRAE Evactuate Civilians] - Initialising";
 // Create Action to Evactuate Civilians
 _evacCIV = ["EVAC_CIV","Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
-	[_target] call PRAE_fnc_evacCIV;
+	[_target] spawn PRAE_fnc_evacCIV;
 },{true}] call ace_interact_menu_fnc_createAction;
 
 // Grab an array of all vehicles in the mission
