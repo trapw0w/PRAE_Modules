@@ -16,9 +16,8 @@ Author: trapw0w
 
 ---------------------------------------------------------------------------- */
 
-// Ensure PRAE Civ Enhancement's are enabled
-if !(PRAE_civEvac_enable) exitWith {diag_log "[PRAE Evactuate Civilians] - Please enable PRAE Civilian Enhancement to use this feature"};
 diag_log "[PRAE Evactuate Civilians] - Initialising";
+
 // Create Action to Evactuate Civilians
 _evacCIV = ["EVAC_CIV","Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];

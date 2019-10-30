@@ -22,7 +22,7 @@ params ["_target"];
 _interval = 20;
 
 // Define sound files
-_sounds = ["PRAE_civEnhance\data\audio\civ_evac_1.ogg", "PRAE_civEnhance\data\audio\civ_evac_1.ogg"]
+_sounds = ["PRAE_civEnhance\data\audio\civ_evac_1.ogg", "PRAE_civEnhance\data\audio\civ_evac_1.ogg"];
 
 // Check if area is already evacuating
 if (_target getVariable["EVAC_IN_USE", false]) exitWith {hint "Evacuation Currently Underway..."};

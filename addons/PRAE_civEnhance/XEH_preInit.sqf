@@ -10,6 +10,8 @@
         params ["_value"];
         if (_value) then {
             PRAE_civEnhance_enable = true;
+        } else {
+            PRAE_civEnhance_enable = false;
         };
     } // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
@@ -23,11 +25,11 @@
     0,
     {
         params ["_value"];
-        diag_log _value;
-        diag_log PRAE_civEnhance_enable;
         if (_value && PRAE_civEnhance_enable) then {
             PRAE_civEvac_enable = true;
             call PRAE_fnc_addEvacCIV;
+        } else {
+            if ((_value) && !(PRAE_civEnhance_enable)) exitWith {diag_log "[PRAE Evactuate Civilians] - Please enable PRAE Civilian Enhancement to use this feature"};
         };
     } // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
