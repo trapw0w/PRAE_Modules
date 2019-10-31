@@ -36,16 +36,29 @@ _target setVariable["EVAC_IN_USE", true, true];
 playSound3D [(selectRandom _sounds), _target];
 
 // Find all Agents(Civs) within a 200 metre radius from the calling vehicle
-/*_agentObjects = [];
+_agentObjects = [];
 _allAgents = agents;
 {
 	_x = agent _x;
-	if (_x inArea[(getPos _target), 200, 200]) then {
+	if (_x inArea[(getPos _target), 200, 200, 0, false]) then {
 		_agentObjects pushBack _x;
 	};
 } forEach _allAgents;
 
-// Iterate over all agents and set them to flee
+
+{
+[_x] spawn {
+	params ["_civ"];
+	sleep 1;
+	_civ setUnitPos "AUTO";
+	_fleePos = [position _civ, 60, 150, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+	format["[PRAE Evactuate Civilians] - Moving object: %1 to %2", _civ, _fleePos] remoteExec ["diag_log", 2];
+	_civ doMove _fleePos;
+	};
+} forEach _agentObjects;
+
+
+/*// Iterate over all agents and set them to flee
 {
 	// Grab object for the agent
 	[_x, []] call ALIVE_fnc_cc_flee;
