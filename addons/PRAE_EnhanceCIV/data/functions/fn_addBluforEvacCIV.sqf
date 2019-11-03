@@ -17,9 +17,9 @@ Author: trapw0w
 
 ---------------------------------------------------------------------------- */
 
-diag_log "[PRAE Evactuate Civilians] - Initialising.. Adding to BLUFOR Vehicles..";
+diag_log "[PRAE Evacuate Civilians] - Initialising.. Adding to BLUFOR Vehicles..";
 
-// Create Action to Evactuate Civilians
+// Create Action to Evacuate Civilians
 _evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
 	[_target] spawn PRAE_fnc_evacCIV;
