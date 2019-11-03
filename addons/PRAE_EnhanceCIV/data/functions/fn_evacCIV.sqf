@@ -24,7 +24,7 @@ params ["_target"];
 _interval = 20;
 
 // Define sound files
-_sounds = ["PRAE_civEnhance\data\audio\civ_evac_1.ogg", "PRAE_civEnhance\data\audio\civ_evac_1.ogg"];
+_sounds = ["PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg", "PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg"];
 
 // Check if area is already evacuating
 if (_target getVariable["EVAC_IN_USE", false]) exitWith {hint "Evacuation Currently Underway..."};
@@ -40,30 +40,33 @@ _agentObjects = [];
 _allAgents = agents;
 {
 	_x = agent _x;
+	// Check if agent is within 200 metre radius of the calling vehicle
 	if (_x inArea[(getPos _target), 200, 200, 0, false]) then {
-		_agentObjects pushBack _x;
+		// Quick check to make sure we haven't picked up <NULL-Object> by accident
+		if !(isNull _x) then {
+			_agentObjects pushBack _x;
+		};
 	};
 } forEach _allAgents;
 
-
 {
-[_x] spawn {
-	params ["_civ"];
-	sleep 1;
-	_civ setUnitPos "AUTO";
-	_fleePos = [position _civ, 60, 150, 1, 0, 1, 0] call BIS_fnc_findSafePos;
-	format["[PRAE Evactuate Civilians] - Moving object: %1 to %2", _civ, _fleePos] remoteExec ["diag_log", 2];
-	_civ doMove _fleePos;
+	// Set animation
+	_anim = "ApanPercMstpSnonWnonDnon_ApanPknlMstpSnonWnonDnon";
+	
+	[_anim, _x] spawn {
+		params ["_anim", "_civ"];
+		// Use ALiVE to set Animation, checks for local or remote exec
+		[_civ, _anim] call ALIVE_fnc_switchMove;
+		// Allow agent to run
+		_civ setSpeedMode "FULL";
+		// Grab random Safe Position
+		_fleePos = [position _civ, 60, 200, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+		_civ moveTo _fleePos;
 	};
-} forEach _agentObjects;
 
-
-/*// Iterate over all agents and set them to flee
-{
-	// Grab object for the agent
-	[_x, []] call ALIVE_fnc_cc_flee;
 } forEach _agentObjects;
-*/
+"[PRAE Evactuate Civilians] - Civilians within 200 Metres are being evacuated!" remoteExec ["diag_log", 2];
+
 // Sleep for _interval, give civs a chance to flee
 sleep _interval;
 
