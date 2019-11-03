@@ -1,10 +1,10 @@
 /* ----------------------------------------------------------------------------
-Function: PRAE_fnc_setPos
+Function: PRAE_fnc_praeSetPos
 
 Description:
 	Function used to setPos on a player given a marker location. This presumes that respawn markers have been 
 	placed using the players faction. (e.g. respawn_blu_f), if no marker is found, setPos will default to 
-	respawn_(faction player)
+	respawn_(side player)
 
 Parameters:
 	_player - Object that we intend to setPos on

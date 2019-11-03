@@ -19,7 +19,7 @@ Function | Description
 ------------ | -------------
 `PRAE_fnc_praeKilled` | Function executed when player is Killed. This function is passed both the player and the status of PRAE_Multispawn_ALiVE_GEAR. Currently, _aliveGear has no use here.
 `PRAE_fnc_praeRespawned` |  Function executed via event handler once a player has respawned. Checks the status of `PRAE_Multispawn_ALiVE_GEAR` and will use `ALiVE_fnc_getGear accordingly`. Player will be moved to the location of `_location` via `PRAE_fnc_praeSetPos`
-`PRAE_fnc_setPos` | Function used to `setPos` on a player given a marker location. This presumes that respawn markers have been placed using the players faction. (e.g. respawn_blu_f), if no marker is found, `setPos` will default to `respawn_(side player)`
+`PRAE_fnc_praeSetPos` | Function used to `setPos` on a player given a marker location. This presumes that respawn markers have been placed using the players faction. (e.g. respawn_blu_f), if no marker is found, `setPos` will default to `respawn_(side player)`
 
 ## PRAE Enhanced Civilians 
 ### Description
