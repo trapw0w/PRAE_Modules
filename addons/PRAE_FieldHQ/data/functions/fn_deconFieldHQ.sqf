@@ -16,7 +16,9 @@ Author: Lewis
 
 ---------------------------------------------------------------------------- */
 params ["_target"];
-
+_element = FieldHQs_Deployed find _target;
+FieldHQs_Deployed deleteAt _element;
+_target setVariable ["FieldHQ_Deployed", false];
 [_target,0] call BIS_fnc_dataTerminalAnimate;
 [_target,0,["ACE_MainActions","Field_HQ_Sign"]] call ace_interact_menu_fnc_removeActionFromObject;
 [_target,0,["ACE_MainActions","Field_HQ_Deconstruct"]] call ace_interact_menu_fnc_removeActionFromObject;

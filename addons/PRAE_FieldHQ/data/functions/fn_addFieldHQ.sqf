@@ -16,7 +16,8 @@ Author: Lewis
 
 ---------------------------------------------------------------------------- */
 params ["_values"];
-
+// Create a global array for limiting how many active field HQs there are
+FieldHQs_Deployed = [];
 // Ensure PRAE Field HQ's are enabled
 diag_log "[PRAE Field HQs] - Initialising";
 // Create Action to Create Field HQ
