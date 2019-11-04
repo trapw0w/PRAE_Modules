@@ -18,6 +18,7 @@ Author: Lewis
 params ["_values"];
 // Create a global array for limiting how many active field HQs there are
 FieldHQs_Deployed = [];
+if !(PRAE_Multispawn) exitwith {diag_log "[PRAE Field HQs] Please enable PRAE_Multispawn to use PRAE Field HQs"};
 // Ensure PRAE Field HQ's are enabled
 diag_log "[PRAE Field HQs] - Initialising";
 // Create Action to Create Field HQ
@@ -33,8 +34,6 @@ _fobjects = [];
 _object = missionNamespace getVariable [_x, objNull];
 _fobjects pushback _object;
 } foreach _values;
-
-diag_log _fobjects;
 
 {
 	if (_x getVariable["PRAE_FIELDHQ_ACTION", false]) exitWith { format["[PRAE Field HQs] - Interaction already present on %1 - %2", _x, (typeOf _x)] remoteExec ["diag_log", 2]};

@@ -37,19 +37,24 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     _target setVariable ["FieldHQ_Deployed", true];
 
     FieldHQs_Deployed pushback _target;
+    
+    _postion = [(getPosASL _target), 1, 5, 1, 0] call BIS_fnc_findSafePos;
+    _marker = createMarker [(format["respawn_FieldHQ%1",(count(FieldHQs_Deployed))]),_postion];
+    _marker setMarkerType "respawn_inf";
+    _marker setMarkerAlpha 0;
 
     _fieldHQsignin = ["Field_HQ_Sign","Sign in to Field HQ","",{
         params ["_target", "_player", "_params"];
-        [_target] call PRAE_fnc_signFieldHQ;
+        [player, _marker] call PRAE_fnc_signFieldHQ;
     },{true}] call ace_interact_menu_fnc_createAction;
 
     _fieldHQDecon = ["Field_HQ_Deconstruct","Deconstruct Field HQ","",{
         params ["_target", "_player", "_params"];
-        [_target] call PRAE_fnc_deconFieldHQ;
+        [_target, _marker] call PRAE_fnc_deconFieldHQ;
     },{true}] call ace_interact_menu_fnc_createAction;
 
     [_target, 0, ["ACE_MainActions"], _fieldHQsignin] call ace_interact_menu_fnc_addActionToObject;
     [_target, 0, ["ACE_MainActions"], _fieldHQDecon] call ace_interact_menu_fnc_addActionToObject;
 }else{
-    hint format ["There are already %1 Field HQ's deployed. Deconstruct one first and try again.",PRAE_fieldHQ_Limit];
-}
+    [player, "PRAE Field HQ", format ["There are already %1 Field HQ's deployed. Deconstruct one first and try again.",PRAE_fieldHQ_Limit]] call PRAE_fnc_praeSendHint;
+};
