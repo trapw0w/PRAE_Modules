@@ -27,6 +27,7 @@
     {  
         params["_value"];
         if (_value) then {
+            player setVariable["PRAE_USE_ALIVE_GEAR", true, true];
             player addEventHandler ["Killed",{
                 PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
                 [player, true] call PRAE_fnc_praeKilled
