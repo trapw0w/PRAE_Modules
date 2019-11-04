@@ -2,12 +2,11 @@
 Function: PRAE_fnc_praeGetData
 
 Description:
-	Function to store custom variables within ALiVE persistence
+	Function to get custom variables data within ALiVE persistence
 
 Parameters:
 	_local - Boolean, is the mission saving persistence locally
 	_customVar - Name of custom var to get data from
-	_value - Data to store to _customVar
 
 Returns:
 	_value - Output of data stored to _customVar
