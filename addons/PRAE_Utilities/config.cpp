@@ -14,6 +14,8 @@ class cfgFunctions
       class PRAE_Utilities
       {
          class praeSendHint {file = "\PRAE_Utilities\data\functions\fn_praeSendHint.sqf";};
+         class praeGetData {file = "\PRAE_Utilities\data\functions\fn_praeGetData.sqf";};
+         class praeSetData {file = "\PRAE_Utilities\data\functions\fn_praeSetData.sqf";};
       };
    };
 };
