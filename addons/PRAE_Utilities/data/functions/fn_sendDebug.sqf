@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: PRAE_fnc_praeSendDebug
+Function: PRAE_fnc_sendDebug
 
 Description:
 	Function to send debug output to RPT
@@ -12,7 +12,7 @@ Returns:
 	N/A
 
 Examples:
-    ["PRAE_fnc_praeGetData", "Traceback: No data found within _value"] call PRAE_fnc_praeSendDebug;
+    ["PRAE_fnc_praeGetData", "Traceback: No data found within _value"] call PRAE_fnc_sendDebug;
 		
 Author: trapw0w
 

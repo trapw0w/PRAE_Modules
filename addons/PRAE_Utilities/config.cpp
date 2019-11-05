@@ -13,10 +13,12 @@ class cfgFunctions
    {
       class PRAE_Utilities
       {
-         class praeSendHint {file = "\PRAE_Utilities\data\functions\fn_praeSendHint.sqf";};
-         class praeGetData {file = "\PRAE_Utilities\data\functions\fn_praeGetData.sqf";};
-         class praeSetData {file = "\PRAE_Utilities\data\functions\fn_praeSetData.sqf";};
-         class praeSendDebug {file = "\PRAE_Utilities\data\functions\fn_praeSendDebug.sqf";};
+         class sendHint {file = "\PRAE_Utilities\data\functions\fn_sendHint.sqf";};
+         class getData {file = "\PRAE_Utilities\data\functions\fn_getData.sqf";};
+         class setData {file = "\PRAE_Utilities\data\functions\fn_setData.sqf";};
+         class sendDebug {file = "\PRAE_Utilities\data\functions\fn_sendDebug.sqf";};
+         class addEventHandler {file = "\PRAE_Utilities\data\functions\fn_addEventHandler.sqf";};
+         class removeEventHandler {file = "\PRAE_Utilities\data\functions\fn_removeEventHandler.sqf";};
       };
    };
 };

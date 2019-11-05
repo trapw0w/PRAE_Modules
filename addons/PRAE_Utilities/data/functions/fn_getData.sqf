@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: PRAE_fnc_praeGetData
+Function: PRAE_fnc_getData
 
 Description:
 	Function to get custom variables data within ALiVE persistence
@@ -12,7 +12,7 @@ Returns:
 	_value - Output of data stored to _customVar
 
 Examples:
-    _value = [true, "_praeAwesomeTeam"] call PRAE_fnc_praeGetData;
+    _value = [true, "_praeAwesomeTeam"] call PRAE_fnc_getData;
 	diag_log _value;
 
 	["Trap", "Lewis"]

@@ -23,7 +23,7 @@ params ["_player", "_aliveGear"];
 if !(isPlayer _player) exitWith{};
 
 [] spawn {
-	titleText ["Respawning...", "BLACK OUT", 10];
+	titleText ["Respawning...", "BLACK IN", 10];
 	waituntil {playerRespawnTime <= 4};
 };
 
