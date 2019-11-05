@@ -41,8 +41,8 @@ Function | Description
 ### Function Library 
 Function | Description
 ------------ | -------------
-`PRAE_fnc_praeSendHint` |  Generic function to `sendHint` to player. Takes input of `_player` as the object, `_module` as the calling module (e.g. `PRAE_FIELD_HQ`) & `_message` as the string to display on the hint dialog.
-`PRAE_fnc_praeSetData` | Function to store custom variables within ALiVE persistence. Takes input of `_local` to check if persistence is done locally, `_customVar` as your custom variable name & `_value` as your data to store to `_customVar`
-`PRAE_fnc_praeGetData` | Function to get custom variables data within ALiVE persistence. Takes `_local` to check if persistence is done locally & `_customVar` as the variable name that the data is stored to. Returns `_value`
+`PRAE_fnc_sendHint` |  Generic function to `sendHint` to player. Takes input of `_player` as the object, `_module` as the calling module (e.g. `PRAE_FIELD_HQ`) & `_message` as the string to display on the hint dialog.
+`PRAE_fnc_setData` | Function to store custom variables within ALiVE persistence. Takes input of `_local` to check if persistence is done locally, `_customVar` as your custom variable name & `_value` as your data to store to `_customVar`
+`PRAE_fnc_getData` | Function to get custom variables data within ALiVE persistence. Takes `_local` to check if persistence is done locally & `_customVar` as the variable name that the data is stored to. Returns `_value`
 
 ## PRAE Insignia

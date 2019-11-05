@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: PRAE_fnc_praeSendHint
+Function: PRAE_fnc_sendHint
 
 Description:
 	Generic function to sendHint to player
@@ -13,7 +13,7 @@ Returns:
 	N/A
 
 Examples:
-    [player, "PRAE Field HQ", "You have successfully signed into the Field HQ. Please check back later for further information"] call PRAE_fnc_praeSendHint;
+    [player, "PRAE Field HQ", "You have successfully signed into the Field HQ. Please check back later for further information"] call PRAE_fnc_sendHint;
 		
 Author: trapw0w
 

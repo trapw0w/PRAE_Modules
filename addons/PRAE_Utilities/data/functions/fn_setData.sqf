@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: PRAE_fnc_praeSetData
+Function: PRAE_fnc_setData
 
 Description:
 	Function to store custom variables within ALiVE persistence
@@ -14,7 +14,7 @@ Returns:
 
 Examples:
 	_value = ["Trap", "Lewis"];
-    [true, "_praeAwesomeTeam", _value] call PRAE_fnc_praeSetData;
+    [true, "_praeAwesomeTeam", _value] call PRAE_fnc_setData;
 		
 Author: trapw0w
 
