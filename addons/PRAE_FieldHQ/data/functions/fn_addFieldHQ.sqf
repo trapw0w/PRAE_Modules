@@ -24,7 +24,7 @@ diag_log "[PRAE Field HQs] - Initialising";
 // Create Action to Create Field HQ
 _fieldHQCreate = ["Field_HQ","Setup PRAE Field HQ","",{
 	params ["_target", "_player", "_params"];
-	[_target] call PRAE_fnc_setupFieldHQ;
+	[_target, _player] call PRAE_fnc_setupFieldHQ;
 },{true}] call ace_interact_menu_fnc_createAction;
 
 // Get object variable names to apply interaction to
