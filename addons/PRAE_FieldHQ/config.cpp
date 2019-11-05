@@ -25,6 +25,7 @@ class cfgFunctions
          class setupFieldHQ {file = "\PRAE_FieldHQ\data\functions\fn_setupFieldHQ.sqf";};
          class signFieldHQ {file = "\PRAE_FieldHQ\data\functions\fn_signFieldHQ.sqf";};
          class deconFieldHQ {file = "\PRAE_FieldHQ\data\functions\fn_deconFieldHQ.sqf";};
+         class signoutFieldHQ {file = "\PRAE_FieldHQ\data\functions\fn_signoutFieldHQ.sqf";};
       };
    };
 };
