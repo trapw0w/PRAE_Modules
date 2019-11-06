@@ -31,7 +31,7 @@ _justPlayers = allPlayers - entities "HeadlessClient_F";
 			_x removeAllEventHandlers "Killed";
 			_x removeAllEventHandlers "Respawn";
 			_x setVariable["FIELD_HQ", Nil, true];
-
+			_x setVariable["FIELD_HQ_Signed", false, true];
 		_x addEventHandler ["Killed",{
 			PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
 			[_x, true] call PRAE_fnc_praeKilled;
@@ -41,6 +41,7 @@ _justPlayers = allPlayers - entities "HeadlessClient_F";
 			_x removeAllEventHandlers "Killed";
 			_x removeAllEventHandlers "Respawn";
 			_x setVariable["FIELD_HQ", Nil, true];
+			_x setVariable["FIELD_HQ_Signed", false, true];
 			_x addEventHandler ["Killed",{[_x, false] call PRAE_fnc_praeKilled}];
 			_x addEventHandler ["Respawn",{[_x, (faction _x), false] call PRAE_fnc_praeRespawned}];
 		};

@@ -35,6 +35,7 @@ if (_player getVariable["PRAE_USE_ALIVE_GEAR", false]) then {
     _player removeAllEventHandlers "Killed";
     _player removeAllEventHandlers "Respawn";
 	_player setVariable["FIELD_HQ", Nil, true];
+    _player setVariable["FIELD_HQ_Signed", false, true];
     player addEventHandler ["Killed",{[player, false] call PRAE_fnc_praeKilled}];
     player addEventHandler ["Respawn",{[player, (faction player), false] call PRAE_fnc_praeRespawned}];
 };
