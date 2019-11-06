@@ -18,11 +18,11 @@ Author: Lewis
 params ["_target","_player"];
 
 
-if (_player getVariable["FIELD_HQ_Signed", false]) exitWith {[_player, "PRAE Field HQ", "You are already signed into another HQ. Sign out of that HQ and try again."] call PRAE_fnc_praeSendHint};
+if (_player getVariable["FIELD_HQ_Signed", false]) exitWith {[_player, "PRAE Field HQ", "You are already signed into another HQ. Sign out of that HQ and try again."] call PRAE_fnc_SendHint};
 
 [_target,0,["ACE_MainActions","Field_HQ_Sign"]] call ace_interact_menu_fnc_removeActionFromObject;
 
-[_player, "PRAE Field HQ", "You have sucessfully signed into this Field HQ"] call PRAE_fnc_praeSendHint;
+[_player, "PRAE Field HQ", "You have sucessfully signed into this Field HQ"] call PRAE_fnc_SendHint;
 
 if (_player getVariable["PRAE_USE_ALIVE_GEAR", false]) then {
     _player removeAllEventHandlers "Killed";
