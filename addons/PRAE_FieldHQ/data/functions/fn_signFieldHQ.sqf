@@ -16,18 +16,19 @@ Author: Lewis
 
 ---------------------------------------------------------------------------- */
 params ["_target","_player"];
-
+_name = _target getVariable["FIELD_HQ_DES", Nil];
 
 if (_player getVariable["FIELD_HQ_Signed", false]) exitWith {[_player, "PRAE Field HQ", "You are already signed into another HQ. Sign out of that HQ and try again."] call PRAE_fnc_sendHint};
 
 [_target,0,["ACE_MainActions","Field_HQ_Sign"]] call ace_interact_menu_fnc_removeActionFromObject;
 
-[_player, "PRAE Field HQ", "You have sucessfully signed into this Field HQ"] call PRAE_fnc_S\sendHint;
+[_player, "PRAE Field HQ", "You have sucessfully signed into this Field HQ"] call PRAE_fnc_sendHint;
 
 if (_player getVariable["PRAE_USE_ALIVE_GEAR", false]) then {
     _player removeAllEventHandlers "Killed";
     _player removeAllEventHandlers "Respawn";
     _player setVariable["FIELD_HQ_Signed", true, true];
+    _player setVariable["FIELD_HQ_DES", _name, true];
     _player addEventHandler ["Killed",{
         PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
         [player, true] call PRAE_fnc_praeKilled;
@@ -37,6 +38,7 @@ if (_player getVariable["PRAE_USE_ALIVE_GEAR", false]) then {
     _player removeAllEventHandlers "Killed";
     _player removeAllEventHandlers "Respawn";
     _player setVariable["FIELD_HQ_Signed", true, true];
+    _player setVariable["FIELD_HQ_DES", _name, true];
     player addEventHandler ["Killed",{[player, false] call PRAE_fnc_praeKilled}];
     player addEventHandler ["Respawn",{[player, (player getVariable["FIELD_HQ", Nil]), false] call PRAE_fnc_praeRespawned}];
 };

@@ -35,7 +35,8 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     };
 
     _target setVariable ["FieldHQ_Deployed", true];
-
+    _target setvariable ["ALiVE_SYS_LOGISTICS_DISABLE",true];
+	[_target, false, [0, 3, 1], 0] call ace_dragging_fnc_setCarryable;
     FieldHQs_Deployed pushback _target;
     
     _postion = [(getPosASL _target), 1, 5, 1, 0] call BIS_fnc_findSafePos;
@@ -43,9 +44,10 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     _tempname = (format["FieldHQ%1",(count(FieldHQs_Deployed))]);
     _marker = createMarker [_markerName, _postion];
     _marker setMarkerType "respawn_inf";
-    _marker setMarkerAlpha 1;
+    _marker setMarkerAlpha 0;
 
     _player setVariable["FIELD_HQ", _tempname, true];
+    _target setVariable["FIELD_HQ_DES", _tempname, true];
     _fieldHQsignin = ["Field_HQ_Sign","Sign in to Field HQ","",{
         params ["_target", "_player", "_params"];
         [_target, _player] call PRAE_fnc_signFieldHQ;

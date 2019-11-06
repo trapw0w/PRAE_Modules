@@ -43,6 +43,7 @@ _fobjects pushback _object;
 	// Apply ACE interaction to vehicles
 	format["[PRAE Field HQs] - Interaction added to Object: %1 - %2", _x, (typeOf _x)] remoteExec ["diag_log", 2];
 	[_x, 0, ["ACE_MainActions"], _fieldHQCreate] call ace_interact_menu_fnc_addActionToObject;
+	[_x, true, [0, 3, 1], 0] call ace_dragging_fnc_setCarryable;
 	// Set variable on the object to designate that the actions have been added
 	_x setVariable["PRAE_FIELDHQ_ACTION", true, true];
 } forEach _fobjects;
