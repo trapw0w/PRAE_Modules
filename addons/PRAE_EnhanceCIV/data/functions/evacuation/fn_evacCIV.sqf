@@ -20,6 +20,8 @@ Author:
 
 params ["_target"];
 
+if !(isServer) exitWith {["PRAE_fnc_evacCIV", "Please execute server side!"] call PRAE_fnc_sendDebug};
+
 // Define sleep between uses
 _interval = 20;
 
