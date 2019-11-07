@@ -26,11 +26,14 @@ _evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 },{true}] call ace_interact_menu_fnc_createAction;
 
 // Grab an array of all vehicles in the mission
-_vehicles = vehicles; 
-{
-	// Check if configFile shows vehicle as side WEST and confirm vehicle is NOT a helicopter.
-	if ((getNumber(configfile >> "CfgVehicles" >> (typeOf _x) >> "side") == 1) && !((typeOf _x) isKindOf ["Air", configFile >> "CfgVehicles"])) then {
-		// Add ACE interaction to vehicles
-		[_x] call PRAE_fnc_addEvacCIV;
-  };
-} forEach _vehicles;
+
+if (isServer) then {
+	_vehicles = vehicles; 
+	{
+		// Check if configFile shows vehicle as side WEST and confirm vehicle is NOT a helicopter.
+		if ((getNumber(configfile >> "CfgVehicles" >> (typeOf _x) >> "side") == 1) && !((typeOf _x) isKindOf ["Air", configFile >> "CfgVehicles"])) then {
+			// Add ACE interaction to vehicles
+			[_x] call PRAE_fnc_addEvacCIV;
+		};
+	} forEach _vehicles;
+};
