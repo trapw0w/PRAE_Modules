@@ -36,7 +36,7 @@
 
             if (player getVariable["FIELD_HQ_Signed", false]) then {
                 _fieldHQ = player getVariable["FIELD_HQ_DES", Nil];
-                player addEventHandler ["Respawn",{[(_this select 0), format["respawn_%1", _fieldHQ)], true] call PRAE_fnc_praeRespawned}];
+                player addEventHandler ["Respawn",{[(_this select 0), format["respawn_%1", _fieldHQ], true] call PRAE_fnc_praeRespawned}];
                 format["[PRAE Multispawn] - ALiVE Field HQ Event Handlers added to %1", player] remoteExec ["diag_log", 2];
             } else {
                 player addEventHandler ["Respawn",{[(_this select 0), format["respawn_%1", (faction (_this select 0))], true] call PRAE_fnc_praeRespawned}];
