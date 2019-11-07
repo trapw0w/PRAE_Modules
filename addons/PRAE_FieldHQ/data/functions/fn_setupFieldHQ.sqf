@@ -42,13 +42,12 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     
     _postion = [(getPosASL _target), 1, 5, 1, 0] call BIS_fnc_findSafePos;
     _markerName = (format["respawn_FieldHQ%1",(count(FieldHQs_Deployed))]);
-    _tempname = (format["FieldHQ%1",(count(FieldHQs_Deployed))]);
     _marker = createMarker [_markerName, _postion];
     _marker setMarkerType "respawn_inf";
     _marker setMarkerAlpha 0;
 
-    _player setVariable["FIELD_HQ", _tempname, true];
-    _target setVariable["FIELD_HQ_DES", _tempname, true];
+    _player setVariable["FIELD_HQ", _markerName, true];
+    _target setVariable["FIELD_HQ_DES", _markerName, true];
     _fieldHQsignin = ["Field_HQ_Sign","Sign in to Field HQ","",{
         params ["_target", "_player", "_params"];
         [_target, _player] call PRAE_fnc_signFieldHQ;

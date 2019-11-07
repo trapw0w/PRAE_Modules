@@ -31,7 +31,7 @@ _target setVariable ["FieldHQ_Deployed", false];
 // Alert player deconstructing that it has been deconstructed succesfully
 [_player, "PRAE Field HQ", "You have successfully deconstructed this Field HQ"] call PRAE_fnc_sendHint;
 // Remove the respawn marker assigned to the Field HQ.
-deleteMarker (format["respawn_%1",(_target getVariable["FIELD_HQ_DES", Nil])]); //Temporary fix
+deleteMarker (format["%1",(_target getVariable["FIELD_HQ_DES", Nil])]); //Temporary fix
 
 //Get the specific HQ name of this object to check players against.
 _HQName = _target getVariable["FIELD_HQ_DES", Nil];
