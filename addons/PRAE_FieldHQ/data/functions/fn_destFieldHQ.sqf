@@ -2,15 +2,14 @@
 Function: PRAE_fnc_destFieldHQ
 
 Description:
-
+Function to be called when a Field HQ is destroyed. This function removes all event handlers from players signed into the HQ similar to the deconstruction function.
 Parameters:
-
+[_unit] - This is a reference to the object that has been destroyed. It is passed from the "Killed" event handler.
 Returns:
-
+Nil
 Examples:
-    (begin example)
 
-    (end)
+_object addEventHandler ["Killed",{[(_this select 0)] call PRAE_fnc_destFieldHQ}];
 
 Author: Lewis
 

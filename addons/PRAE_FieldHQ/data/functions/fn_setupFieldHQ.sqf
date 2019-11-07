@@ -2,15 +2,15 @@
 Function: PRAE_fnc_setupFieldHQ
 
 Description:
-
+Setup the Field HQ and it's actions for players to interact with.
 Parameters:
-
+[_target, _player] - _target is a reference to the object which will be setup as a PRAE Field HQ. _player is a temporary reference 
+to the player who has setup the HQ to reference vital variables on.
 Returns:
-
+Nil
 Examples:
-    (begin example)
 
-    (end)
+[_target, _player] call PRAE_fnc_setupFieldHQ;
 
 Author: Lewis
 

@@ -2,15 +2,16 @@
 Function: PRAE_fnc_signFieldHQ
 
 Description:
-
+Function to have a player signout of the PRAE Field HQ. When the player signs out, their eventhandlers are reset to their original state
+and the player can sign back in if they wish.
 Parameters:
-
+[_target, _player] - _target is a reference to the object (PRAE Field HQ) that the player is signing out of. _player is a local reference 
+to the player who is signing out of the PRAE Field HQ.
 Returns:
-
+Nil
 Examples:
-    (begin example)
 
-    (end)
+[_target, _player] call PRAE_fnc_signoutFieldHQ;
 
 Author: Lewis
 
