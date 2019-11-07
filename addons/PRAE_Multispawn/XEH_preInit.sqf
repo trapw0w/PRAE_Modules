@@ -31,7 +31,7 @@
 
             player addEventHandler ["Killed",{
                 PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
-                [player, true] call PRAE_fnc_praeKilled
+                [(player), true] call PRAE_fnc_praeKilled
             }];
 
             if (player getVariable["FIELD_HQ_Signed", false]) then {
