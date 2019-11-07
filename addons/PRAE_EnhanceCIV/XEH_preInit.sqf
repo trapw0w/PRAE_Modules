@@ -47,7 +47,4 @@ Author:
     "PRAE Modules", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     0,
-    {
-        diag_log "Success";
-    } 
-] call CBA_Settings_fnc_init;
+    {}] call CBA_Settings_fnc_init;
