@@ -46,5 +46,4 @@ Author:
     "Enable the use of Humanitarian Rations/Water", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "PRAE Modules", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
-    0,
-    {}] call CBA_Settings_fnc_init;
+    0] call CBA_Settings_fnc_init;
