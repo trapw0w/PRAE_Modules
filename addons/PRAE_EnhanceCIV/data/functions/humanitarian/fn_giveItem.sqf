@@ -29,7 +29,7 @@ switch (_type) do {
 		_player playAction "putdown";
 		[_player, "ACE_Humanitarian_Ration"] call PRAE_fnc_removeItem;
 		sleep 2;
-		_target playAction "pickup";
+		_target playAction "putdown";
 
 		if (30 > random 100) then {
 			[getPos _player, [side _player], -3] call ALIVE_fnc_updateSectorHostility;
@@ -39,6 +39,16 @@ switch (_type) do {
 	};
 
 	case "water": {
-		diag_log "water";
+		if !("ACE_WaterBottle" in items _player) exitWith {[_player, "PRAE Enhanced Civilians", "You do not have a bottle of water to give this civ!"] call PRAE_fnc_sendHint};
+
+		_player playAction "putdown";
+		[_player, "ACE_WaterBottle"] call PRAE_fnc_removeItem;
+		sleep 2;
+		_target playAction "putdown";
+
+		if (30 > random 100) then {
+			[getPos _player, [side _player], -3] call ALIVE_fnc_updateSectorHostility;
+			["PRAE_fnc_giveItem", "Sector Hostility Reduced!"] call PRAE_fnc_sendDebug;
+		};
 	};
 };

@@ -9,8 +9,8 @@
     {  
         params["_value"];
         if ((_value) && !(PRAE_Multispawn_ALiVE_GEAR)) then {
-            player addEventHandler ["Killed",{[player, false] call PRAE_fnc_praeKilled}];
-			player addEventHandler ["Respawn",{[player, format["respawn_%1", (faction player)], false] call PRAE_fnc_praeRespawned}];
+            player addEventHandler ["Killed",{[(_this select 0), false] call PRAE_fnc_praeKilled}];
+			player addEventHandler ["Respawn",{[(_this select 0), format["respawn_%1", (faction (_this select 0))], false] call PRAE_fnc_praeRespawned}];
 					
 			format["[PRAE Multispawn] - Event Handlers added to %1", player] remoteExec ["diag_log", 2];
         };
@@ -32,8 +32,8 @@
                 PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
                 [player, true] call PRAE_fnc_praeKilled
             }];
-			player addEventHandler ["Respawn",{[player, format["respawn_%1", (faction player)], true] call PRAE_fnc_praeRespawned}];
-			format["[PRAE Multispawn] - ALiVE Event Handlers added to %1", player] remoteExec ["diag_log", 2];
+			player addEventHandler ["Respawn",{[(_this select 0), format["respawn_%1", (faction (_this select 0))], true] call PRAE_fnc_praeRespawned}];
+			format["[PRAE Multispawn] - ALiVE Event Handlers added to %1", (_this select 0)] remoteExec ["diag_log", 2];
         };
     } // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
