@@ -17,6 +17,7 @@ Author: Lewis
 ---------------------------------------------------------------------------- */
 params ["_target","_player"];
 if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
+    [_player, "PRAE Field HQ", "You have successfully setup a Field HQ."] call PRAE_fnc_sendHint;
     [_target,0,["ACE_MainActions","Field_HQ"]] call ace_interact_menu_fnc_removeActionFromObject;
     _target addEventHandler ["Killed",{[(_this select 0)] call PRAE_fnc_destFieldHQ}];
     [_target,3] call BIS_fnc_dataTerminalAnimate;
@@ -58,7 +59,13 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
         [_target, _player] call PRAE_fnc_deconFieldHQ;
     },{true}] call ace_interact_menu_fnc_createAction;
 
+    _fieldHQsignout = ["Field_HQ_Signout","Sign out of the Field HQ","",{
+        params ["_target", "_player", "_params"];
+        [_target, _player] call PRAE_fnc_signoutFieldHQ;
+    },{true}] call ace_interact_menu_fnc_createAction;
+
     [_target, 0, ["ACE_MainActions"], _fieldHQsignin] call ace_interact_menu_fnc_addActionToObject;
+    [_target, 0, ["ACE_MainActions"], _fieldHQsignout] call ace_interact_menu_fnc_addActionToObject;
     [_target, 0, ["ACE_MainActions"], _fieldHQDecon] call ace_interact_menu_fnc_addActionToObject;
 }else{
     [_player, "PRAE Field HQ", format ["There are already %1 Field HQ's deployed. Deconstruct one first and try again.",PRAE_fieldHQ_Limit]] call PRAE_fnc_sendHint;

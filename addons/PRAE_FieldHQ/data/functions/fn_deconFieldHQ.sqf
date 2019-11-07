@@ -28,6 +28,8 @@ _target setVariable ["FieldHQ_Deployed", false];
 [_target,0,["ACE_MainActions","Field_HQ_Sign"]] call ace_interact_menu_fnc_removeActionFromObject;
 [_target,0,["ACE_MainActions","Field_HQ_Deconstruct"]] call ace_interact_menu_fnc_removeActionFromObject;
 [_target,0,["ACE_MainActions","Field_HQ_Signout"]] call ace_interact_menu_fnc_removeActionFromObject;
+// Alert player deconstructing that it has been deconstructed succesfully
+[_player, "PRAE Field HQ", "You have successfully deconstructed this Field HQ"] call PRAE_fnc_sendHint;
 // Remove the respawn marker assigned to the Field HQ.
 deleteMarker (format["respawn_%1",(_target getVariable["FIELD_HQ_DES", Nil])]); //Temporary fix
 
