@@ -30,7 +30,7 @@
             player setVariable["PRAE_USE_ALIVE_GEAR", true, true];
             player addEventHandler ["Killed",{
                 PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
-                [player, true] call PRAE_fnc_praeKilled
+                [(player), true] call PRAE_fnc_praeKilled
             }];
 			player addEventHandler ["Respawn",{[player, (faction player), true] call PRAE_fnc_praeRespawned}];
 			format["[PRAE Multispawn] - ALiVE Event Handlers added to %1", player] remoteExec ["diag_log", 2];

@@ -61,5 +61,5 @@ if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     [_target, 0, ["ACE_MainActions"], _fieldHQsignin] call ace_interact_menu_fnc_addActionToObject;
     [_target, 0, ["ACE_MainActions"], _fieldHQDecon] call ace_interact_menu_fnc_addActionToObject;
 }else{
-    [player, "PRAE Field HQ", format ["There are already %1 Field HQ's deployed. Deconstruct one first and try again.",PRAE_fieldHQ_Limit]] call PRAE_fnc_sendHint;
+    [_player, "PRAE Field HQ", format ["There are already %1 Field HQ's deployed. Deconstruct one first and try again.",PRAE_fieldHQ_Limit]] call PRAE_fnc_sendHint;
 };

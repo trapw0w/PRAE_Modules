@@ -28,16 +28,16 @@ if (_player getVariable["PRAE_USE_ALIVE_GEAR", false]) then {
     _player setVariable["FIELD_HQ_DES", Nil, true];
     _player addEventHandler ["Killed",{
         PLAYERGEAR = [objNull, [_this select 0]] call ALiVE_fnc_setGear;
-        [player, true] call PRAE_fnc_praeKilled;
+        [(_this select 0), true] call PRAE_fnc_praeKilled;
     }];
-    _player addEventHandler ["Respawn",{[player, (faction player), true] call PRAE_fnc_praeRespawned}];
+    _player addEventHandler ["Respawn",{[(_this select 0), (faction (_this select 0)), true] call PRAE_fnc_praeRespawned}];
 }else{
     _player removeAllEventHandlers "Killed";
     _player removeAllEventHandlers "Respawn";
     _player setVariable["FIELD_HQ_Signed", false, true];
     _player setVariable["FIELD_HQ_DES", Nil, true];
-    player addEventHandler ["Killed",{[player, false] call PRAE_fnc_praeKilled}];
-    player addEventHandler ["Respawn",{[player, (faction player), false] call PRAE_fnc_praeRespawned}];
+    _player addEventHandler ["Killed",{[(_this select 0), false] call PRAE_fnc_praeKilled}];
+    _player addEventHandler ["Respawn",{[(_this select 0), (faction (_this select 0)), false] call PRAE_fnc_praeRespawned}];
 };
 
 _fieldHQsignin = ["Field_HQ_Sign","Sign in to Field HQ","",{
