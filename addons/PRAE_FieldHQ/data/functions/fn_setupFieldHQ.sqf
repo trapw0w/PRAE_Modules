@@ -18,7 +18,7 @@ Author: Lewis
 params ["_target","_player"];
 if !((count(FieldHQs_Deployed))>= PRAE_fieldHQ_Limit) then {
     [_target,0,["ACE_MainActions","Field_HQ"]] call ace_interact_menu_fnc_removeActionFromObject;
-
+    _target addEventHandler ["Killed",{[(_this select 0)] call PRAE_fnc_destFieldHQ}];
     [_target,3] call BIS_fnc_dataTerminalAnimate;
 
     with uiNamespace do {
