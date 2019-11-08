@@ -19,13 +19,19 @@ Author: trapw0w
 
 params ["_target"];
 
-_evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
+/*_evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
 	[_target] spawn PRAE_fnc_evacCIV;
 },{true}] call ace_interact_menu_fnc_createAction;
+*/
+
+_evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
+	params ["_target", "_player", "_params"];
+	[_target, _player] remoteExec ["PRAE_fnc_evacCIV", 0];
+},{true}] call ace_interact_menu_fnc_createAction;
 
 // Check if ACE interaction has already been applied
-if (_target getVariable["PRAE_EVAC_ACTION", false]) exitWith {format["[PRAE Evactuate Civilians] - Interaction already present on %1 - %2", _target, (typeOf _target)] remoteExec ["diag_log", 2]};
+//if (_target getVariable["PRAE_EVAC_ACTION", false]) exitWith {format["[PRAE Evactuate Civilians] - Interaction already present on %1 - %2", _target, (typeOf _target)] remoteExec ["diag_log", 2]};
 // Apply ACE interaction to vehicles
 [_target, 0, ["ACE_MainActions"], _evacCIV] call ace_interact_menu_fnc_addActionToObject;
 format["[PRAE Evactuate Civilians] - Interaction added to Vehicle: %1 - %2", _target, (typeOf _target)] remoteExec ["diag_log", 2];

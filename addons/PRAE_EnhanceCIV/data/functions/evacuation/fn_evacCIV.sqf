@@ -18,9 +18,9 @@ Author:
 	trapw0w
 ---------------------------------------------------------------------------- */
 
-params ["_target"];
+params ["_target", "_player"];
 
-if !(isServer) exitWith {["PRAE_fnc_evacCIV", "Please execute server side!"] call PRAE_fnc_sendDebug};
+if !(isServer) exitWith {};
 
 // Define sleep between uses
 _interval = 20;
@@ -29,7 +29,7 @@ _interval = 20;
 _sounds = ["PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg", "PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg"];
 
 // Check if area is already evacuating
-if (_target getVariable["EVAC_IN_USE", false]) exitWith {hint "Evacuation Currently Underway..."};
+if (_target getVariable["EVAC_IN_USE", false]) exitWith {[_player, "PRAE Civilian Enhancements", "Evacuating currently underway.."] call PRAE_fnc_sendHint};
 
 // Set the area to currently evacuating
 _target setVariable["EVAC_IN_USE", true, true];

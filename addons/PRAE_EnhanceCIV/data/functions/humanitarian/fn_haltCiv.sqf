@@ -23,4 +23,5 @@ params ["_target", "_caller"];
 // Stop civilian
 [[[_target],{(_this select 0) disableAI "MOVE"}],"BIS_fnc_spawn",_target,false,true] call BIS_fnc_MP;
 // Add release action
-[_target] call PRAE_fnc_addReleaseAction;
+[_target] remoteExec ["PRAE_fnc_addReleaseAction", 0, true];
+//[_target] call PRAE_fnc_addReleaseAction;

@@ -16,18 +16,9 @@ Examples:
 Author: trapw0w
 
 ---------------------------------------------------------------------------- */
+params["_target"];
 
-diag_log "[PRAE Evacuate Civilians] - Initialising.. Adding to BLUFOR Vehicles..";
-
-// Grab an array of all vehicles in the mission
-
-if (isServer) then {
-	_vehicles = vehicles; 
-	{
-		// Check if configFile shows vehicle as side WEST and confirm vehicle is NOT a helicopter.
-		if ((getNumber(configfile >> "CfgVehicles" >> (typeOf _x) >> "side") == 1) && !((typeOf _x) isKindOf ["Air", configFile >> "CfgVehicles"])) then {
-			// Add ACE interaction to vehicles
-			[_x] call PRAE_fnc_addEvacCIV;
-		};
-	} forEach _vehicles;
+// Check if configFile shows vehicle as side WEST 
+if (getNumber(configfile >> "CfgVehicles" >> (typeOf _target) >> "side") == 1) then {
+	[_target] call PRAE_fnc_addEvacCIV;
 };
