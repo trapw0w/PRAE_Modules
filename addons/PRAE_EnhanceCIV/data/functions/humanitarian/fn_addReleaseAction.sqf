@@ -19,14 +19,12 @@ Author: trapw0w
 
 params ["_target"];
 
-if !(isServer) exitWith {};
-
 _condition = "alive _target" + "&&" + "_target getvariable ['target_halted',false]";
 
 [_target, ["Move Civilian Along", {
 	params ["_target", "_caller", "_actionId"];
 	//_target removeAction _actionId;
-	[_target, _actionId] remoteExec ["removeAction", 0, true];
+	[_target, _actionId] remoteExec ["removeAction", -2, true];
 	_target setVariable["target_halted", false, true];
 	[_target, _caller] call PRAE_fnc_releaseCiv;
-}, [], 1, false, true, "", _condition, 3]] remoteExec ["addAction", 0, true];
+}, [], 1, false, true, "", _condition, 3]] remoteExec ["addAction", -2, true];

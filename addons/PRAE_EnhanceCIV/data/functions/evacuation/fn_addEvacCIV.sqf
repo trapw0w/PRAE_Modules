@@ -27,7 +27,7 @@ params ["_target"];
 
 _evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
-	[_target, _player] remoteExec ["PRAE_fnc_evacCIV", 0];
+	[_target, _player] remoteExec ["PRAE_fnc_evacCIV", 2];
 },{true}] call ace_interact_menu_fnc_createAction;
 
 // Check if ACE interaction has already been applied
