@@ -33,7 +33,6 @@ Author:
         params ["_value"];
         if (_value && PRAE_EnhanceCIV_enable) then {
             PRAE_civEvac_enable = true;
-            call PRAE_fnc_addBluforEvacCIV;
         } else {
             if ((_value) && !(PRAE_EnhanceCIV_enable)) exitWith {diag_log "[PRAE Evactuate Civilians] - Please enable PRAE Civilian Enhancement to use this feature"};
         };
