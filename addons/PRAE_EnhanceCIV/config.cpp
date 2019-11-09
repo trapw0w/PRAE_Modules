@@ -33,6 +33,7 @@ class cfgFunctions
          class addReleaseAction {file = "\PRAE_EnhanceCIV\data\functions\humanitarian\fn_addReleaseAction.sqf";};
          class haltCiv {file = "\PRAE_EnhanceCIV\data\functions\humanitarian\fn_haltCiv.sqf";};
          class releaseCiv {file = "\PRAE_EnhanceCIV\data\functions\humanitarian\fn_releaseCiv.sqf";};
+         class initHumanitarianActions {file = "\PRAE_EnhanceCIV\data\functions\humanitarian\fn_initHumanitarianActions.sqf";};
       };
    };
 };

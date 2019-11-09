@@ -24,8 +24,6 @@ params ["_target", "_player"];
 // Check if area is already evacuating
 if (_target getVariable["EVAC_IN_USE", false]) exitWith {[_player, "PRAE Civilian Enhancements", "Evacuating currently underway.."] call PRAE_fnc_sendHint};
 
-if !(isServer) exitWith {};
-
 // Define sleep between uses
 _interval = 20;
 

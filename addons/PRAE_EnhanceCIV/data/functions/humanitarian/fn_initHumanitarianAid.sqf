@@ -36,7 +36,6 @@ if ((PRAE_HUMRATS) && (side _unit == CIVILIAN)) then {
 	// Apply ACE interactions to object
 	[_unit, 0, ["ACE_MainActions"], _giveHumrat] call ace_interact_menu_fnc_addActionToObject;
     [_unit, 0, ["ACE_MainActions"], _giveWater] call ace_interact_menu_fnc_addActionToObject;
-
-	// Add ability to halt unit
-	[_unit] remoteExec["PRAE_fnc_addHaltAction", -2, true];
+	
+	//[_unit] remoteExec["PRAE_fnc_addHaltAction", 2, true];
 };
