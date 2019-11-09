@@ -4,6 +4,7 @@ class Extended_Init_EventHandlers
     {
         class ADDON
         {
+            Init = "_this spawn PRAE_fnc_initHumanitarianActions";
             clientInit = "_this call PRAE_fnc_initHumanitarianAid";
         };
     };
