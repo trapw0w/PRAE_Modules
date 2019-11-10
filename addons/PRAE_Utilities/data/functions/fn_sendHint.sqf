@@ -20,6 +20,6 @@ Author: trapw0w
 ---------------------------------------------------------------------------- */
 
 params["_player", "_module", "_message"];
-
-_hintOutput = "<br/><t color='#ff0000'>" + _module + "</t><br/><br/><t size='1.0' shadow='1' shadowColor='#000000' align='center'>" + _message + "</t><br/><br/>";
+_image = "<img size='6' image='\PRAE_Utilities\data\images\prae.paa' align='center'/>";
+_hintOutput = _image + "<br/><t color='#ff0000'>" + _module + "</t><br/><br/><t size='1.0' shadow='1' shadowColor='#000000' align='center'>" + _message + "</t><br/><br/>";
 hint parseText (_hintOutput)
