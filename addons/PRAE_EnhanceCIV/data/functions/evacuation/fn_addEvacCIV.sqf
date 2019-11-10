@@ -21,7 +21,8 @@ params ["_target"];
 
 _evacCIV = ["EVAC_CIV","PRAE Evacuate Civilians","",{
 	params ["_target", "_player", "_params"];
-	[_target, _player] spawn PRAE_fnc_evacCIV;
+	if (_target getVariable["EVAC_IN_USE", false]) exitWith {[_player, "PRAE Civilian Enhancements", "Evacuation currently underway.."] call PRAE_fnc_sendHint};
+	[_target, _player] remoteExec["PRAE_fnc_evacCIV", 2];
 },{true}] call ace_interact_menu_fnc_createAction;
 
 // Apply ACE interaction to vehicles
