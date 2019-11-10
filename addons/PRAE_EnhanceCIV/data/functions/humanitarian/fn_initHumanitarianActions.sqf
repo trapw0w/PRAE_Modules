@@ -27,10 +27,9 @@ if ((PRAE_HUMRATS) && (side _unit == CIVILIAN)) then {
 
 	_unit addAction ["Halt Civilian", {
 		params ["_unit", "_caller", "_actionId"];
-		//_unit removeAction _actionId;
 		[_unit, _actionId] remoteExec ["removeAction", -2, true];
 		_unit setVariable["target_halted", true, true];
 		[_unit, _caller] call PRAE_fnc_haltCiv;
-	}, [], 1, false, true, "", _condition, 3];
+	}, [], 1, false, true, "", _condition, 5];
 
 };
