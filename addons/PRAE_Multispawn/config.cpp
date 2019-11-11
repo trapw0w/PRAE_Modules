@@ -7,11 +7,11 @@ class CfgPatches {
 	};
 };
 
-class Extended_PreInit_EventHandlers
+class Extended_Init_EventHandlers
 { 
    class PRAE_Multispawn
    {
-      init = "call compile preprocessFileLineNumbers '\PRAE_Multispawn\XEH_preInit.sqf'";
+      init = "call compile preprocessFileLineNumbers '\PRAE_Multispawn\XEH_initPost.sqf'";
    };
 };
 

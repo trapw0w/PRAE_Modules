@@ -18,16 +18,13 @@ Author:
 	trapw0w
 ---------------------------------------------------------------------------- */
 
-params ["_target"];
+params ["_target", "_player"];
 
 // Define sleep between uses
 _interval = 20;
 
 // Define sound files
 _sounds = ["PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg", "PRAE_EnhanceCIV\data\audio\civ_evac_1.ogg"];
-
-// Check if area is already evacuating
-if (_target getVariable["EVAC_IN_USE", false]) exitWith {hint "Evacuation Currently Underway..."};
 
 // Set the area to currently evacuating
 _target setVariable["EVAC_IN_USE", true, true];
