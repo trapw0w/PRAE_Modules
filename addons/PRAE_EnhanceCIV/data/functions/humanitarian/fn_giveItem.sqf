@@ -43,9 +43,9 @@ switch (_type) do {
 		// Increase total humrats the Civilian has been handed
 		_target setVariable["AMOUNT_HUMRATS", (_countHumrat + 1)];
 		
-		// 30% chance that this act will reduce sector hostility by -3
+		// 30% chance that this act will reduce sector hostility by -10
 		if (30 > random 100) then {
-			[getPos _player, [side _player], -3] call ALIVE_fnc_updateSectorHostility;
+			[getPos _player, [side _player], -10] call ALIVE_fnc_updateSectorHostility;
 		};
 
 	};
@@ -68,9 +68,9 @@ switch (_type) do {
 		// Increase total water bottles the Civilian has been handed
 		_target setVariable["AMOUNT_WATER", (_countWater + 1)];
 
-		// 30% chance that this act will reduce sector hostility by -3
+		// 30% chance that this act will reduce sector hostility by -10
 		if (30 > random 100) then {
-			[getPos _player, [side _player], -3] call ALIVE_fnc_updateSectorHostility;
+			[getPos _player, [side _player], -10] call ALIVE_fnc_updateSectorHostility;
 		};
 	};
 };
